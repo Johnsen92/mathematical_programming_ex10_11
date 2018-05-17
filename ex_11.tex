@@ -14,6 +14,32 @@
 
 \subsubsection{ }  
 
-The optimal $u$ value is either 4 or 3 in this case and the corresponding $w_{LD}$ is 16.
+The optimal integer $\mathbf{u}$ value is either 4 or 3 in this case and the corresponding $w_{LD}$ is 16.
 
 \subsubsection{ } 
+
+By running the algorithm for a couple of steps we obtain the results displayed in table \ref{tabl_sub_algo}. In the process, we noticed that solutions of the subproblems do not have to be unique, somethimes multiple $\mathbf{x}$ yielded the same value for $\mathbf{x}(\mathbf{u}^k)$.
+
+\begin{table}[h]
+\centering
+\caption{Subgradiant algorithm}
+\label{tabl_sub_algo}
+\begin{tabular}{llll}
+$k$ & $\mathbf{u}^k$   & $\mu$   & $\mathbf{x}(\mathbf{u}^k)$ \\
+0 & 0 & 1 & 28 \\
+1 & 4 & 0.5	& 16 \\
+2 & 2 & 0.25 & 20 \\
+3 & 3 & 0.125 & 16 \\
+4 & 3.5 & 0.0625 & 14.5 \\
+5 & 3.3125 & 0.03125 & 14.75 \\
+6 & 3.4375 & 0.015625 & 14.5625 \\
+7 & 3.453125 & 0.0078125 & 14.546875 \\
+8 & 3.609375 & 0.00390625 & 14.5390625 \\
+9 & 3.46484375 & 0.001953125 & 14.53515625 \\
+10 & 3.466796875 & 0.0009765625 & 14.533203125 \\
+11 & 3.4677734375 & 0.0004882813 & 14.5322265625 \\
+12 & 3.4682617188 & 0.0002441406 & 14.5317382813 \\
+13 & 3.4685058594 & 0.0001220703 & 14.5314941406
+  
+\end{tabular}
+\end{table}

@@ -5,27 +5,29 @@
 \subsubsection{Formulation}
 
 \begin{itemize}
-	\item $p_i$ : Dual variable
+	\item $p_{ij}$ : Dual variable
+    \item $u_{ij}$ : Penalty variable
+    \item $x_{ij}$ : Analogous to the slides
+    \item $y_{i}$ : Analogous to the slides
+	\item $f_i$ : Analogous to the slides
 \end{itemize}
 
-\subsubsection{Variables}
-\begin{itemize}
-	\item $a_i$ : Decision variable for wheter to include an item or not
-\end{itemize}
+\subsubsection{Optimization}
+\[ z(u) = \max\sum_{i \in M}\sum_{j \in N}(p_{ij} - u_{ij})x_{ij} + \sum_{j \in N}f_jy_j + \sum_{i \in M}\sum_{j \in N}y_{j}u_{ij} \addtag \]
 
 \subsubsection{Constraints}
 
-\[ \sum^n_{i = 1}a_il_j \leq W \addtag \]
-\[ \forall i \in [1,n] : a_i\in \{0,1\} \addtag \]
+\[ \forall i \in M : \sum_{j \in N}x_{ij} = 1 \addtag \]
+\[ x \in \mathbb{R}^{|M|\times|N|} \addtag \]
+\[ y \in \{0,1\}^{M} \addtag \]
 
-\subsubsection{Optimization}
-\[ min \sum^n_{i = 1}a_ip_i \addtag \]
+\subsubsection{Splitting up optimization funciotn}
+\[ z_{x}(u) = \max\sum_{i \in M}\sum_{j \in N}(p_{ij} - u_{ij})x_{ij} \addtag \]
+\[ \forall i \in M : \sum_{j \in N}x_{ij} = 1 \addtag \]
+\[ x \in \mathbb{R}^{|M|\times|N|} \addtag \]
+\\\\
+\[ z_{y}(u) = \max\sum_{j \in N}f_jy_j + \sum_{i \in M}\sum_{j \in N}y_{j}u_{ij} \addtag \]
+\[ y \in \{0,1\}^{M} \addtag \]
 
-\subsubsection{Solving Approach}
-A possible approach to solving this is Branch-and-Bound.
-
-\subsection{ }  
-We did not know how to do that, sorry.
-
-\subsection{ } 
-A reasonable branching rule might be to forbid (or force) 2 of the $n$ items in the same bin: $a_{pj} \neq a_{qj} : p,q \in [1,n], p \neq q$
+\subsubsection{Solving subproblems}
+The subproblems of the Lagrangian Relaxation can trivialy be solved in linear time.
