@@ -1,0 +1,31 @@
+\section{Lagrangian Relaxation for Uncapacitated Facility Location}
+
+\subsection{ } 
+
+\subsubsection{Formulation}
+
+\begin{itemize}
+	\item $p_i$ : Dual variable
+\end{itemize}
+
+\subsubsection{Variables}
+\begin{itemize}
+	\item $a_i$ : Decision variable for wheter to include an item or not
+\end{itemize}
+
+\subsubsection{Constraints}
+
+\[ \sum^n_{i = 1}a_il_j \leq W \addtag \]
+\[ \forall i \in [1,n] : a_i\in \{0,1\} \addtag \]
+
+\subsubsection{Optimization}
+\[ min \sum^n_{i = 1}a_ip_i \addtag \]
+
+\subsubsection{Solving Approach}
+A possible approach to solving this is Branch-and-Bound.
+
+\subsection{ }  
+We did not know how to do that, sorry.
+
+\subsection{ } 
+A reasonable branching rule might be to forbid (or force) 2 of the $n$ items in the same bin: $a_{pj} \neq a_{qj} : p,q \in [1,n], p \neq q$

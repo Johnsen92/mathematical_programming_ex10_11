@@ -1,0 +1,19 @@
+\section{Lagrangian Relaxation for Knapsack Problems}
+
+\subsection{Variables}
+\begin{itemize}
+	\item $y_1, y_2, y_3$ : Binary decision variables for wheter to include an item or not
+\end{itemize}
+
+\subsection{Constraints}
+
+\[ y_1,y_2,y_3 \in \{0,1\} \addtag \]
+
+\subsection{Optimization}
+\[ z(u) = max\{10y_1 + 4y_2 + 14y_3 + u(4 - 3y_1 - y_2 - 4y_3)\} \addtag \]
+
+\subsubsection{ }  
+
+The optimal $u$ value is either 4 or 3 in this case and the corresponding $w_{LD}$ is 16.
+
+\subsubsection{ } 

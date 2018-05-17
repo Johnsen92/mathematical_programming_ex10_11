@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{subcaption} % Allows the use of subfigures and enables their referencing.
+\usepackage[hidelinks]{hyperref}
+\usepackage[acronym,toc,shortcuts]{glossaries}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\setcounter{section}{9}
+\usepackage{amsmath}
+\newcommand\addtag{\refstepcounter{equation}\tag{\theequation}}
+
+\begin{document}
+	
+	
+	\sloppy
+	\input{titlepage}
+	
+	\textbf{Notation}: If we write $ v \in [k,n] $ and $v$ is obviously supposed to be integer, we actually mean $v \in \{v \in \mathbb{N} \mid k \leq v \leq n\}$. It is just more convenient to write the former.
+	
+	\input{ex_10}
+	\clearpage
+	
+	\input{ex_11}
+	
+	\bibliography{bibdata} 
+	\bibliographystyle{ieeetr}
+	
+\end{document}
+
+
